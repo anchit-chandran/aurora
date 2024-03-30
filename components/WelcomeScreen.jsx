@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View, Image } from "react-native";
-import React from "react";
 import { Button } from "react-native-paper";
 import { router, Link } from "expo-router";
 
@@ -42,21 +41,12 @@ function WelcomeScreen() {
   );
 }
 
-// <LinearGradient
-// colors={["rgb(251,210,217)", "rgb(120,181,254)", "rgb(171,239,255)"]}
-// style={{
-//   flex: 1,
-//   width: "100%",
-//   alignItems: "center",
-//   justifyContent: "center",
-// }}
-// >
-
 export default WelcomeScreen;
 
 const styles = StyleSheet.create({
   container: {
     main: {
+      flex: 1,
       padding: 20,
       alignItems: "center",
       justifyContent: "center",
