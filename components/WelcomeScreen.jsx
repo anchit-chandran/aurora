@@ -40,7 +40,6 @@ function WelcomeScreen() {
             labelStyle={styles.buttonText}
             buttonColor="white"
             onPress={() => {
-              console.log("press");
               router.push("onboarding");
             }}
           >
