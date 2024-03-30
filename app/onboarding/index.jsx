@@ -2,12 +2,24 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import AuroraLogoTextHeader from "@/components/onboarding/AuroraLogoTextHeader";
 import TailorExperience from "@/components/onboarding/TailorExperience";
+import { IconButton } from "react-native-paper";
 
-export default function page2() {
+export default function Onboarding() {
   return (
     <View style={[styles.container.main]}>
       <AuroraLogoTextHeader />
       <TailorExperience />
+      <IconButton
+        icon="right"
+        color="white"
+        mode="contained-tonal"
+        size={40}
+        style={{
+          backgroundColor: "white",
+          borderRadius: 10,
+        }}
+        onPress={() => console.log("Pressed")}
+      />
     </View>
   );
 }
