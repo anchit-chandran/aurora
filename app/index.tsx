@@ -3,7 +3,7 @@ import { StrictMode } from 'react';
 import React from 'react'
 import WelcomeScreen from '@/components/WelcomeScreen'
 import { useFonts } from 'expo-font';
-import { LinearGradient } from 'expo-linear-gradient';
+
 
 export default function App() {
     const [loaded, error] = useFonts({
@@ -16,25 +16,12 @@ export default function App() {
     }
 
     return (
+        <SafeAreaView style={{
+            flex: 1,
+        }}>
+            <WelcomeScreen></WelcomeScreen>
+        </SafeAreaView>
 
-        <LinearGradient
-            colors={["rgb(251,210,217)", "rgb(120,181,254)", "rgb(171,239,255)"]}
-            style={{
-                flex: 1,
-                width: "100%",
-                alignItems: "center",
-                justifyContent: "center",
-            }}
-        >
-            <StatusBar translucent={true} backgroundColor={'transparent'} />
-            <SafeAreaView style={{
-                flex: 1,
-            }}>
-
-                <WelcomeScreen></WelcomeScreen>
-
-            </SafeAreaView>
-        </LinearGradient>
 
     )
 }

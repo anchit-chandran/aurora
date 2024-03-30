@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import { Button } from "react-native-paper";
 import { router, Link } from "expo-router";
+import { LinearGradient } from 'expo-linear-gradient';
 
 function MainText() {
   return (
@@ -8,7 +9,7 @@ function MainText() {
       <Text style={[styles.text]}>Welcome to</Text>
       <View style={styles.auroraView}>
         <Image
-          source={require("../assets/images/main-logo.png")}
+          source={require("@/assets/images/main-logo.png")}
           style={styles.logo}
         ></Image>
         <Text style={[styles.text]}>Aurora</Text>
@@ -20,24 +21,34 @@ function MainText() {
 
 function WelcomeScreen() {
   return (
-    <View style={styles.container.main}>
-      <View style={{ flex: 1, justifyContent: "center" }}>
-        <MainText />
+    <LinearGradient
+      colors={["rgb(251,210,217)", "rgb(120,181,254)", "rgb(171,239,255)"]}
+      style={{
+        flex: 1,
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <View style={styles.container.main}>
+        <View style={{ flex: 1, justifyContent: "center" }}>
+          <MainText />
+        </View>
+        <View style={{ width: "100%", marginBottom: 50 }}>
+          <Button
+            mode="contained-tonal"
+            labelStyle={styles.buttonText}
+            buttonColor="white"
+            onPress={() => {
+              console.log("press");
+              router.push("onboarding");
+            }}
+          >
+            Let's get started
+          </Button>
+        </View>
       </View>
-      <View style={{ width: "100%", marginBottom: 50 }}>
-        <Button
-          mode="contained-tonal"
-          labelStyle={styles.buttonText}
-          buttonColor="white"
-          onPress={() => {
-            console.log("press");
-            router.replace("/page2");
-          }}
-        >
-          Let's get started
-        </Button>
-      </View>
-    </View>
+    </LinearGradient>
   );
 }
 
